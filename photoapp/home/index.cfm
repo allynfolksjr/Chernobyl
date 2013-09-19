@@ -1,3 +1,11 @@
+<cfquery datasource="photogallerydb" name="qPhotographer">
+  SELECT * from photographer WHERE featured = 1
+
+</cfquery>
+<cfquery datasource="photogallerydb" name="qPhotos">
+  SELECT * from Photo WHERE photographerid = #qPhotographer.photographerid#
+</cfquery>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
@@ -19,7 +27,8 @@
 	<br class="clearfloat" />
 	<div id="content">
     <h1>Our Featured Photographer</h1>
-	<h2>Photographer name here</h2>
+    <cfoutput><h2>#qPhotographer.firstname# #qPhotographer.lastname#</h2></cfoutput>
+    <cfdump var="#qPhotos#">
 	</div>
     <div id="footer">
       Copyright &copy;2009 Our Photo Gallery
