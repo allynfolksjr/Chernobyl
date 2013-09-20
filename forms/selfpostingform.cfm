@@ -8,7 +8,12 @@
 
 <body>
 	<h1>Form Page</h1>
-    <form action="simpleaction.cfm" method="post">
+
+    <cfif isDefined("form.cheese")>
+        <cfoutput>
+            Welcome, #form.firstname# #form.lastname#.</cfoutput>
+</cfif>
+    <cfform>
 	
 	<table border="0">
     <tr>
@@ -32,7 +37,7 @@
         </td>
     </tr>
 </table>
-</form>
+</cfform>
 
 </body>
 </html>

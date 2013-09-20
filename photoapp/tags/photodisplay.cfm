@@ -12,6 +12,9 @@
 			<div>
 				#photo.getCaption()#
 			</div>
+			<div>
+				#dollarformat(photo.getPrice())#
+			</div>
 		</div>
 		</cfoutput>
 	</cfloop>
