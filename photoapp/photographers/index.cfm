@@ -6,6 +6,23 @@
 <cfmodule template="../includes/header.cfm"
 	pagetitle = "Our Photo Gallery - Photographers">
 
+<script language="JavaScript">
+var photographerid;
+function confirmDelete(id)
+{
+    photographerid = id;
+    ColdFusion.MessageBox.show('confirmBox');
+}
+function doDelete(btn) {
+    // alert(btn);÷÷
+    if(btn == "yes") {
+        document.location = "delete.cfm?photographerid=" + photographerid;
+    } else {
+        //
+    }
+}
+</script>
+
     <h1>Photographers</h1>
 
 	<table border="0">
@@ -14,6 +31,7 @@
         </th>
         <th>Last Name
         </th>
+        <th></th>
         <th></th>
         <th></th>
     </tr>
@@ -30,6 +48,7 @@
         <td>
             <a href="edit.cfm?photographerid=#items[i].getPhotographerID()#">Edit</a>
         </td>
+        <td><a href="javascript:confirmDelete(#items[i].getPhotographerID()#)">Delete Photographer</a></td>
     </tr>
 	</cfoutput>
 	</cfloop>
@@ -37,6 +56,7 @@
 
     <a href="edit.cfm">Insert new photographer</a>
 
+    <cfmessagebox type="confirm" name="confirmBox" labelok="Yes" labelcancel="No" message="Are you sure you want to delete this photographer?" callbackhandler="doDelete"/>
 
 	<!---<cfdump var="#items#" label="Photographers">--->
 
