@@ -1,5 +1,5 @@
 <cfscript>
-	service = new photogallery.cfc.data.PHOTOGRAPHERGateway();
+	service = new photoapp.cfc.data.PHOTOGRAPHERGateway();
 	items = service.getAll();
 </cfscript>
 
