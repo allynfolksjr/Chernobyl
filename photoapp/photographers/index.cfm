@@ -1,5 +1,5 @@
 <cfscript>
-	service = new photoapp.cfc.data.PHOTOGRAPHERGateway();
+	service = new photogallery.cfc.data.PHOTOGRAPHERGateway();
 	items = service.getAll();
 </cfscript>
 
@@ -26,5 +26,8 @@
 	</cfoutput>
 	</cfloop>
 	</table>
+
+
+	<!---<cfdump var="#items#" label="Photographers">--->
 
 <cfmodule template="../includes/footer.cfm">
