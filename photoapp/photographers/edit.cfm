@@ -35,11 +35,11 @@ pagetitle = "Our Photo Gallery - Edit Photographer">
   <table>
     <tr>
       <td>First Name:</td>
-      <td><cfinput name="firstName" size="30" value="#form.firstname#"></td>
+      <td><cfinput name="firstName" size="30" value="#form.firstname#" required="true" validateat="onSubmit" message="First name must be filled in"></td>
     </tr>
     <tr>
       <td>Last Name</td>
-      <td><cfinput name="lastName" size="30" value="#form.lastname#">
+      <td><cfinput name="lastName" size="30" value="#form.lastname#" required="true" validateat="onSubmit" message="Lastname must be filled in">
 
       </cfinput></td> 
     </tr>
