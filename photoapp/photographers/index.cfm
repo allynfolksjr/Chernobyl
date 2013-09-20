@@ -14,6 +14,7 @@
         </th>
         <th>Last Name
         </th>
+        <th></th>
     </tr>
 	<cfloop from="1" to="#arrayLen(items)#" index="i">
 	<cfoutput>
@@ -21,6 +22,9 @@
         <td>#items[i].getFirstName()#
         </td>
         <td>#items[i].getLastName()#
+        </td>
+        <td>
+          <a href="photolist.cfm?photographerid=#items[i].getPhotographerID()#">Photos</a>  
         </td>
     </tr>
 	</cfoutput>
