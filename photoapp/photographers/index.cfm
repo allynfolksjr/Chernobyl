@@ -15,6 +15,7 @@
         <th>Last Name
         </th>
         <th></th>
+        <th></th>
     </tr>
 	<cfloop from="1" to="#arrayLen(items)#" index="i">
 	<cfoutput>
@@ -26,10 +27,15 @@
         <td>
           <a href="photolist.cfm?photographerid=#items[i].getPhotographerID()#">Photos</a>  
         </td>
+        <td>
+            <a href="edit.cfm?photographerid=#items[i].getPhotographerID()#">Edit</a>
+        </td>
     </tr>
 	</cfoutput>
 	</cfloop>
 	</table>
+
+    <a href="edit.cfm">Insert new photographer</a>
 
 
 	<!---<cfdump var="#items#" label="Photographers">--->

@@ -1,7 +1,7 @@
 <cfcomponent output="false">
 
 	<!---- properties ---->
-	<cfproperty name="Photographerid" type="numeric"  />
+	<cfproperty name="Photographerid" type="numeric" fieldtype="id" ormtype="int" generator="identity" />
 	<cfproperty name="Firstname" type="string"  />
 	<cfproperty name="Lastname" type="string"  />
 	<cfproperty name="Featured" type="numeric"  />
@@ -17,7 +17,7 @@
 	<cffunction name="init" returntype="any">
 		<cfreturn this />
 	</cffunction>
-
+ 
 	
 	 <!----INFO:If This Application is to be run under ColdFusion 9 then the following getters and setters can be removed.
 	 			If you delete the getters and setters you should enable use-implicit-getters option in serviceconfig.xml present in webroot/WEB-INF/flex ---->
